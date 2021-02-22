@@ -1,1 +1,0 @@
-# nga ngu si
