@@ -1,0 +1,15 @@
+*{
+    margin: 0;
+    padding: 0;
+    outline: none;
+    box-sizing: border-box;
+}
+body {
+    background: #cbc0d3;
+  }
+a{
+    text-decoration: none;
+}
+ul{
+    list-style-type: none;
+}

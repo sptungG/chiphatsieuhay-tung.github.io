@@ -8,55 +8,109 @@
     <link rel='stylesheet' type='text/css' media='screen' href='css/header.css'>
     <link rel='stylesheet' type='text/css' media='screen' href='css/main.css'>
 
-   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-    <header id="header" class="header" ></header>
-    <!-- LOGIN -->
-    <div class="container">
-        <div class="welcome">
-          <div class="pinkbox">
-            <div class="signup nodisplay">
-              <h1>register</h1>
-              <form autocomplete="off">
-                <input type="text" placeholder="username">
-                <input type="email" placeholder="email">
-                <input type="password" placeholder="password">
-                <input type="password" placeholder="confirm password">
-                <button class="button submit">create account </button>
-              </form>
-            </div>
-            <div class="signin">
-              <h1>sign in</h1>
-              <form class="more-padding" autocomplete="off">
-                <input type="text" placeholder="username">
-                <input type="password" placeholder="password">
-                <div class="checkbox">
-                  <input type="checkbox" id="remember" /><label for="remember">remember me</label>
+    <header id="header" class="header" >
+                <div class="left-menu-hamburger" >
+                    <button href="#" title="MENU" class="icon" onclick="dropDownMenu()"><a>☰ Menu</a></button>       
+                    <ul id="drop-down-content" class="drop-down-content">
+                        <li><a href="#" title="HOME"><i class="fa fa-fw fa-home"></i> Home</a></li>
+                        <li><a href="#about" title="#About Us">About Us</a></li>
+                        <li><a href="#dishes" title="Get a random Meal.">Hungry?</a></li>
+                        <li><a href="#contact" title="#Contact Us">Contact Us</a></li> 
+                    <li>
+                        <form class="search-container" action="//llamaswill.tumblr.com/search">
+                            <input id="search-box" type="text" class="search-box" name="q" />
+                            <label for="search-box"><span class="fa fa-search search-icon"> </span></label>
+                            <input type="submit" id="search-submit" />
+                          </form>
+                          <button class="goDark">
+                            <i class="fa fa-moon-o" aria-hidden="true"></i>
+                        </button>  
+                    </li>
+        
+                    </ul>
                 </div>
-      
-                <button class="button submit">login</button>
-              </form>
-            </div>
+        <div class="header-title"><a>read<span>books</span></a></div>
+
+        <div class="right-menu">
+            <div class="user-page" id='user-page' style="display: none;" onclick="openUserPage()"><i class="fa fa-user"></i></div>
+            <!-- <button href="#" id="sign-in" onclick="signinToggle()" class="sign-in"><a> Login </a></button> -->
+            <button href="#" id="sign-up" onclick="signupToggle()" class="sign-up"><a> Login </a></button>
+            
+            <a1 style="font-size: 30px; margin: 0 !important; color:black;"> | </a1>
+            
+            <button class="goDark">
+                <i class="fa fa-moon-o" aria-hidden="true"></i>
+            </button>  
+        </div>
+          <script>
+            /* When the user clicks on the button, 
+             toggle between hiding and showing the dropdown content */
+             function dropDownMenu() {
+              var x = document.getElementById("drop-down-content");
+                if (x.style.display === "block") {
+                    x.style.display = "none";
+                } else {
+                    x.style.display = "block";
+                }
+             }
+            </script>
+    </header>
+    <!-- LOGIN -->
+<div id="myModal" class="modal">
+      <div class="login-container modal-content" id="login-container">
+      <div class="form-container sign-up-container">
+        <form action="#">
+          <h1>Create Account</h1>
+          <div class="social-container">
+            <a href="#" class="social"><i class="fa fa-facebook"></i></a>
+            <a href="#" class="social"><i class="fa fa-google-plus"></i></a>
+            <a href="#" class="social"><i class="fa fa-linkedin"></i></a>
           </div>
-          <div class="leftbox">
-            <h2 class="title"><span>BLOOM</span>&<br>BOUQUET</h2>
-            <p class="desc">pick your perfect <span>bouquet</span></p>
-            <img class="flower smaller" src="https://image.ibb.co/d5X6pn/1357d638624297b.jpg" alt="1357d638624297b" border="0">
-            <p class="account">have an account?</p>
-            <button class="button" id="signin">login</button>
+          <span>or use your email for registration</span>
+          <input type="text" placeholder="Name" />
+          <input type="email" placeholder="Email" />
+          <input type="password" placeholder="Password" />
+          <button>Sign Up</button>
+        </form>
+      </div>
+
+      <div class="form-container sign-in-container">
+        <form action="#">
+          <h1>Sign in</h1>
+          <div class="social-container">
+            <a href="#" class="social"><i class="fa fa-facebook"></i></a>
+            <a href="#" class="social"><i class="fa fa-google-plus"></i></a>
+            <a href="#" class="social"><i class="fa fa-linkedin"></i></a>
           </div>
-          <div class="rightbox">
-            <h2 class="title"><span>BLOOM</span>&<br>BOUQUET</h2>
-            <p class="desc"> pick your perfect <span>bouquet</span></p>
-            <img class="flower" src="https://preview.ibb.co/jvu2Un/0057c1c1bab51a0.jpg" />
-            <p class="account">don't have an account?</p>
-            <button class="button" id="signup">sign up</button>
+          <span>or use your account</span>
+          <input type="email" placeholder="Email" />
+          <input type="password" placeholder="Password" />
+          <a href="#">Forgot your password?</a>
+          <button>Sign In</button>
+        </form>
+
+      </div>
+      <div class="overlay-container">
+        <div class="overlay">
+          <div class="overlay-panel overlay-left">
+            <h1>Welcome Back!</h1>
+            <p>To keep connected with us please login with your personal info</p>
+            <button class="ghost" id="signIn">Sign In</button>
+          </div>
+          <div class="overlay-panel overlay-right">
+            <h1>Hello, Friend!</h1>
+            <p>Enter your personal details and start journey with us</p>
+            <button class="ghost" id="signUp">Sign Up</button>
           </div>
         </div>
       </div>
       
-      </div>
+    </div>
+    </div>
+  </div>
     <!--  -->
     <section></section>
     <section></section>
