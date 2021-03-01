@@ -1,4 +1,4 @@
-# Branch
+# Branch-Remote Github
 [https://thachpham.com/tools/git-branch-ky-thuat-phan-nhanh.html](https://thachpham.com/tools/git-branch-ky-thuat-phan-nhanh.html)   
 ***
 ## Cách tạo một branch
